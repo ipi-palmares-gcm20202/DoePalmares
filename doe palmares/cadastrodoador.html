@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<head>
+  <meta charset="UTF-8" />
+  <title>Cadastro Doação</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+  <link rel="stylesheet" type="text/css" href="style.css" />
+  <style>
+      
+  </style>
+</head>
+<body>
+      <!--FORMULÁRIO DE CADASTRO-->
+      <div id="cadastro">
+        <form method="post" action=""> 
+          <h1>Cadastro De Doação</h1> 
+           
+          <p> 
+            <label for="nome_cad">Seu nome</label>
+            <br>
+            <input id="nome_cad" name="nome_cad" required="required" type="text" placeholder="Nome Completo" />
+            <form>
+                <br>
+                <br>
+            
+                <label for="nome_cad"> Conta/operação </label>
+                <input placeholder="Número do cartão"/>
+                <br> 
+                <br>
+                <label for="nome_cad">  Data de validade </label>
+                <input placeholder="MM / AA" />
+                <br>
+                <br>
+                <label for="nome_cad">Agencia</label>
+                <input placeholder="XXX"  />
+              </form>
+        
+          </p>
+            <label for="senha_cad">Sua senha</label>
+            <input id="senha_cad" name="senha_cad" required="required" type="password" placeholder="ex. 1234"/>
+          </p>
+          <label for="dinheiro">R$</label><input type="text" id="dinheiro" name="dinheiro" class="dinheiro form-control" style="display:inline-block" />
+          <p> 
+            <input type="submit" value="Cadastrar"/> 
+          </p>
+           
+          <p class="link">  
+            Já é doador?
+            <a href="login.html"> Ir para Login </a>
+          </p>
+        </form>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

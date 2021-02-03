@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title> Cadastro </title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+ 
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+ 
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+ 
+  <style>
+ 
+      body {
+        background:#69a5f5;
+        
+      }
+ 
+      .login-form {
+    width: 400px;
+    height: 950px;
+    border: 2px solid #000;
+    border-radius: 80px 0px 80px 0px;
+    color:blue;
+    background-color: #f5f8f7;
+     top: 50%;
+     left: 50%;
+     position: absolute;
+     transform: translate(-50%,-50%);
+     box-sizing: border-box;
+     padding: 20px 60px;
+      
+      }
+ 
+      .img-container {
+        width: 150px;
+        margin-left: 150px;
+      }
+ 
+      .img-container img {
+        width: 10px;
+      }
+ 
+      .botao-login {
+          width: 90%;         
+      }
+ 
+      .blog-title {
+        text-align: left;
+        color: greenyellow(50, 47, 255);
+        font-size: 25px;
+        font-weight: bold;
+        margin-top: 32px;
+      }
+ 
+      .esqueceu-a-senha {
+        color: red;
+        cursor: pointer;
+        margin-bottom: 0;
+      }
+ 
+      .no-margin-bottom, .no-margin-bottom .input-field {
+          margin-bottom: 0!important;
+      }
+ 
+      .alert {
+        position: relative;
+        padding: .75rem 1.25rem;
+        border: 1px solid transparent;
+        border-radius: .25rem;
+        text-align: left;
+      }
+ 
+      .alert-danger {
+        color: #fd1d15;
+        background-color: #f199a0;
+        border-color: #464444;
+      }
+ 
+      .botao-novo-usuario {
+        background:rgb(53, 107, 80);
+        color:rgb(243, 244, 250) !important;
+        border: 1px solid black !important;
+        font-weight: bold;
+      }
+
+      .botao-novo-usuario {
+        background: rgb(7, 24, 177) !important;
+        border: 1px solid black !important;
+        color:white!important;
+      }
+ 
+      .erro-senha {
+        width: 100%;
+        text-align: left;
+        color: rgb(214, 9, 9);
+        font-size: 13px;
+      }
+ 
+      .erro-senha i {
+          margin-right: 5px;
+      }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <div class="nav-wrapper">
+      <a href="#" class="brand-logo">DoePalmares</a>
+      <ul id="nav-mobile" class="right hide-on-med-and-down">
+        <li><a href="cadastrodoador.html">Me Torna Doador</a></li>
+        <li><a href="login.html">Já possou uma conta</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <div id="app">
+    <div class="login-form card">
+        
+      <div class="logo-div">
+        <img class="logo-img" src="imagens/iconelogin.jpeg" alt="">
+        </div>
+        
+        <p class="blog-title">Criar Conta</p>
+ 
+        <div class="row">
+            <form class="col s12">
+              <div class="row no-margin-bottom">
+                <div class="input-field col s12">
+                    <i class="fa fa-user-circle" aria-hidden="true"></i>
+                    <input id="nome" type="text" class="validate" v-model="nome">
+                    <label for="nome">Nome</label>
+                </div>
+              </div>
+
+              <div class="row no-margin-bottom">
+                <div class="input-field col s12">
+                  <i class="fa fa-address-card" aria-hidden="true"></i>
+                  <input type="text" name="cpf" class="cpf form-control" placeholder="Digite seu CPF" />
+                  <label for="cpf">Cpf/Cnpj</label>
+                </div>
+              </div>
+
+              <div class="row no-margin-bottom">
+                <div class="input-field col s12">
+                  <i class="fa fa-envelope" aria-hidden="true"></i>
+                  <input id="email" type="email" class="validate" v-model="email">
+                  <label for="email">E-mail</label>
+                </div>
+              </div>
+              <div class="row no-margin-bottom">
+                <div class="input-field col s12">
+                  <i class="fa fa-key" aria-hidden="true"></i>
+                  <input id="password" type="password" class="validate" v-model="senha">
+                  <label for="password">Senha</label>
+                </div>
+              </div>
+              <div class="row">
+                <div class="input-field col s12">
+                  <input id="confirmar-senha" type="password" class="validate" v-model="confirmacaoSenha">
+                  <label for="confirmar-senha">Confirmação De Senha</label>
+                  <span v-if="senha != confirmacaoSenha" class="erro-senha"><i class="fa fa-times"></i>As senhas digitadas não conferem</span>
+                </div>
+              </div>
+              <div class="row">
+                <a :disabled="senha != confirmacaoSenha" v-on:click="cadastrar " class="waves-effect waves-light btn btn-large green botao-login">CADASTRAR</a>
+              </div>
+
+            </form>
+          </div>
+    </div>
+  </div>
+  <script type="module">
+ 
+    var app = new Vue({
+      el: '#app',
+      data: {
+        nome: '',
+         Cpf:  '',
+        email: '',
+        senha: '',
+        confirmacaoSenha: ''
+      },
+      methods: {
+        cadastrar: function() {
+            alert('Dados cadastrados com sucesso!');
+      }
+    }</script>
+</body>
+</html>
